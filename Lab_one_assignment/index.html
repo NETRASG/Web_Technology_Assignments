@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>simple Calculator</title>
+	<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
+	<style>
+		body {
+			padding-top: 40px;
+		}
+		table,td,th {
+			border: 2px solid;
+			text-align: center;
+			border-collapse: collapse;
+			background-color: #93CCDC;
+			
+			font-weight: bold;
+
+		}
+		td,th {
+			padding: 10px;
+			
+				
+		}
+		input {
+			border-radius: 5px;
+			outline: none;
+			border-style: hidden;
+			height: 20px;
+			text-align-last: right;
+			margin: 5px;
+			padding:3px;
+
+
+		}
+		button {
+			border-radius: 5px;
+			border: 0;
+			padding: 5px;
+
+		}
+		input[type=number]::-webkit-inner-spin-button, 
+		input[type=number]::-webkit-outer-spin-button { 
+  			-webkit-appearance: none; 
+		}
+
+		
+
+	</style>
+	
+</head>
+<body>
+	<center>
+		<table >
+			<th colspan="4">SIMPLE CALCULATOR</th>
+			<tr>
+				<td>value1</td>
+				<td ><input id="v1" type="number" name="value1" ></td>
+				<td>value2</td>
+				<td ><input id="v2" type="number" name="value2"></td>
+			</tr>
+			<tr>
+				<td><button onclick="calc(this.id)" id="add">Addition</button></td>
+
+				<td><button onclick="calc(this.id)" id="sub"  style="width: 50%">Subtraction</button></td>
+
+				<td><button onclick="calc(this.id)" id="mul" >Multiplication</button></td>
+
+				<td><button onclick="calc(this.id)" id="div" style="width: 50%">Division</button></td>
+			</tr>
+			<tr>
+				<td>Answer:</td>
+				<td><input id="res"  name="result" ></td>
+				<td colspan="2"><button onclick="calc(this.id)" id="clear" style="width: 50%">clear all</button></td>
+			</tr>
+			
+				
+			
+		</table>
+	</center>
+	<script type="text/javascript">
+		function calc(clicked_id){
+			var a=parseFloat(document.getElementById('v1').value);
+			var b=parseFloat(document.getElementById('v2').value);
+			if(clicked_id=='clear')
+			{
+				v1.value="";
+				v2.value="";
+				res.value="0";
+			}
+			else if(isNaN(a)|isNaN(b))
+			{
+				window.alert("ENTER VALID NUMBER!!");
+			}
+			else
+			{
+				if(clicked_id=='add')
+					document.getElementById('res').value=a+b;
+				if(clicked_id=='sub')
+					document.getElementById('res').value=a-b;
+				if(clicked_id=='mul')
+					document.getElementById('res').value=a*b;
+				if(clicked_id=='div')
+					document.getElementById('res').value=a/b;
+			}
+		}
+	</script>
+
+</body>
+</html>
